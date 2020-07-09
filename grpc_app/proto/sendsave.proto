@@ -1,0 +1,15 @@
+// sendsave proto file
+//python -m grpc_tools.protoc -I./proto --python_out=. --grpc_python_out=. ./proto/sendsave.proto
+syntax= "proto3";
+
+service SendSaveService{
+    rpc send(Send) returns(save){}
+}
+
+message Send{
+    int32 count=1;
+}
+
+message save {
+    int32 count=1;
+}
